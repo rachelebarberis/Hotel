@@ -1,0 +1,42 @@
+﻿@model AddReservationViewModel
+
+<form id="addForm">
+    <div class="mb-3">
+        <label class="form-label">Camera</label>
+        <select class="form-select" asp-for="CameraId" required>
+            <option value="">Seleziona una Camera</option>
+            @foreach (var camera in ViewBag.Camere)
+            {
+                <option value="@camera.CameraId">@camera.Info</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cliente</label>
+        <select class="form-select" asp-for="ClienteId" required>
+            <option value="">Seleziona un Cliente</option>
+            @foreach (var cliente in ViewBag.Clienti)
+            {
+                <option value="@cliente.ClienteId">@cliente.NomeCompleto</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Data Inizio</label>
+        <input type="date" class="form-control" asp-for="DataInizio" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Data Fine</label>
+        <input type="date" class="form-control" asp-for="DataFine" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Stato</label>
+        <input type="text" class="form-control" asp-for="Stato" required />
+    </div>
+
+    <button class="btn btn-primary" type="button" onclick="sendAddForm()">Aggiungi Prenotazione</button>
+</form>

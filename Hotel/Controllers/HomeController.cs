@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using Hotel.Models;
+using Hotel.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hotel.Controllers

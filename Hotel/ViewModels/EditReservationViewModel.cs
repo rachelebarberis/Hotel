@@ -16,12 +16,12 @@ namespace Hotel.ViewModels
 
         public Guid CameraId { get; set; }
 
-       
 
+        [DataType(DataType.Date)]
         public DateTime DataInizio { get; set; }
 
-      
 
+        [DataType(DataType.Date)]
         public DateTime DataFine { get; set; }
 
         

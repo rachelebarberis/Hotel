@@ -1,24 +1,22 @@
-﻿using Hotel.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using Hotel.Models;
 
 namespace Hotel.ViewModels
 {
     public class AddReservationViewModel
     {
        
-
-
-
         public Guid ClienteId { get; set; }
 
 
         public Guid CameraId { get; set; }
 
 
-
+        [DataType(DataType.Date)]
         public DateTime DataInizio { get; set; }
 
 
-
+        [DataType(DataType.Date)]
         public DateTime DataFine { get; set; }
 
 

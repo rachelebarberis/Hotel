@@ -42,11 +42,10 @@ namespace Hotel.Controllers
             }
 
             ViewBag.Camere = await _context.Camere
-                .Select(c => new { c.CameraId, Info = $"N° {c.NumeroCamera} - {c.Tipo}" })
                 .ToListAsync();
 
             ViewBag.Clienti = await _context.Cliente
-                .Select(c => new { c.ClienteId, NomeCompleto = $"{c.Nome} {c.Cognome}" })
+      
                 .ToListAsync();
 
             var editReservationViewModel = new EditReservationViewModel()

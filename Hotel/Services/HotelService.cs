@@ -52,8 +52,8 @@ namespace Hotel.Services
             }
 
             res.PrenotazioneId = editReservationViewModel.PrenotazioneId;
-            res.CameraId = editReservationViewModel.CameraId;
-            res.ClienteId = editReservationViewModel.ClienteId;
+            res.CameraId = (Guid)editReservationViewModel.CameraId;
+            res.ClienteId = (Guid)editReservationViewModel.ClienteId;
             res.DataInizio = editReservationViewModel.DataInizio;
             res.DataFine = editReservationViewModel.DataFine;
           

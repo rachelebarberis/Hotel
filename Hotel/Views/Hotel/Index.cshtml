@@ -105,9 +105,10 @@
 			   })
 		}
 
-				 async function sendEditForm() {
+	async function sendEditForm() {
 
 			console.log("Invio form...");
+			
 			const form = document.getElementById('editForm');
 
 			if (form) {
@@ -186,7 +187,7 @@
 			if (form) {
 				const formData = new FormData(form);
 
-				const result = await fetch('/Hotel/Add', { 
+				const result = await fetch('/Hotel/Add', {
 					method: "POST",
 					body: formData
 				});
@@ -198,7 +199,7 @@
 					if (addModal) {
 						const addModalComponent = bootstrap.Modal.getInstance(addModal);
 						addModalComponent.hide();
-						loadList();  
+						loadList();
 					}
 				} else {
 					alert("Errore: " + response.message);
@@ -207,5 +208,5 @@
 		}
 
 
-		</script>
+	</script>
 }

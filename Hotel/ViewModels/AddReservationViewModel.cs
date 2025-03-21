@@ -27,10 +27,10 @@ namespace Hotel.ViewModels
 
 
 
-        public virtual Cliente Cliente { get; set; }
+        public virtual Cliente? Cliente { get; set; }
 
 
-        public virtual Camera Camera { get; set; }
+        public virtual Camera? Camera { get; set; }
 
 
         public int DurataGiorni => (DataFine - DataInizio).Days;

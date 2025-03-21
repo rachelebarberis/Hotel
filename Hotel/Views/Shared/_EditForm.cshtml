@@ -4,38 +4,40 @@
     <input type="hidden" asp-for="PrenotazioneId" />
 
     <div class="mb-3">
-        <label class="form-label">Camera</label>
-        <select class="form-select" asp-for="CameraId" required>
-            @foreach (var camera in ViewBag.Camere)
-            {
-                <option value="@camera.CameraId" selected="@(camera.CameraId == Model.CameraId ? "selected" : null)">
-                    @camera.Info
-                </option>
-            }
-        </select>
+    <select class="form-select" asp-for="CameraId" required>
+        <option value="">-- Seleziona una camera --</option>
+        @foreach (var camera in ViewBag.Camere)
+        {
+            <option value="@camera.CameraId" selected="@(camera.CameraId == Model.CameraId ? "selected" : null)">
+                @camera.Info
+            </option>
+        }
+    </select>
+    </div>
+    <div class="mb-3">
+    <select class="form-select" asp-for="ClienteId" required>
+        <option value="">-- Seleziona un cliente --</option>
+        @foreach (var cliente in ViewBag.Clienti)
+        {
+            <option value="@cliente.ClienteId" selected="@(cliente.ClienteId == Model.ClienteId ? "selected" : null)">
+                @cliente.NomeCompleto
+            </option>
+        }
+    </select>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Cliente</label>
-        <select class="form-select" asp-for="ClienteId" required>
-            @foreach (var cliente in ViewBag.Clienti)
-            {
-                <option value="@cliente.ClienteId" selected="@(cliente.ClienteId == Model.ClienteId ? "selected" : null)">
-                    @cliente.NomeCompleto
-                </option>
-            }
-        </select>
-    </div>
+      
 
     <div class="mb-3">
         <label class="form-label">Data Inizio</label>
-        <input type="date" class="form-control" asp-for="DataInizio" required />
+        <input type="datetime" class="form-control" asp-for="DataInizio" required id="DataInizio" />
     </div>
 
     <div class="mb-3">
         <label class="form-label">Data Fine</label>
-        <input type="date" class="form-control" asp-for="DataFine" required />
+        <input type="datetime" class="form-control" asp-for="DataFine" required id="DataFine" />
     </div>
+
 
     <div class="mb-3">
         <label class="form-label">Stato</label>

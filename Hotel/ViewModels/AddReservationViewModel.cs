@@ -36,6 +36,7 @@ namespace Hotel.ViewModels
         public int DurataGiorni => (DataFine - DataInizio).Days;
 
 
+
         public decimal CostoTotale => Camera != null ? Camera.PrezzoPerNotte * DurataGiorni : 0;
     }
 }

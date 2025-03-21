@@ -2,11 +2,7 @@
 
 namespace Hotel.ViewModels
 {
-    public class RegisterViewModel
-    {
-        using System.ComponentModel.DataAnnotations;
-
-namespace Settimana6Giorno1.ViewModels;
+ 
 
     public class RegisterViewModel
     {
@@ -34,5 +30,5 @@ namespace Settimana6Giorno1.ViewModels;
 
     }
 
-}
+
 }

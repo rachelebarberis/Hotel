@@ -5,15 +5,17 @@
 {
     <table id="reservationsTable" class="table table-striped">
         <thead>
-        <th>Prenotazione</th>
-        <th>N.Camera</th>
-        <th>TipoCamera</th>
-        <th>Durata</th>
-        <th>Cliente</th>
-        <th>Costo</th>
-        <th>Stato</th>
-        <th>Azioni</th>
-
+            <th>Prenotazione</th>
+            <th>N.Camera</th>
+            <th>TipoCamera</th>
+            <th>Durata</th>
+            <th>Cliente</th>
+            <th>Costo</th>
+            <th>Stato</th>
+            @if (User.IsInRole("Admin"))
+            {
+                <th>Azioni</th>
+            }
         </thead>
         <tbody>
             @foreach (var res in Model.Prenotazioni)
@@ -26,13 +28,15 @@
                     <td>@res.Cliente.Nome @res.Cliente.Cognome</td>
                     <td>@res.CostoTotale</td>
                     <td>@res.Stato</td>
-                    
-              
 
-                    <td>
-                        <button class="btn btn-sm btn-success" onclick="showEditModal('@res.PrenotazioneId')">Edit</button>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <td>
+                            <button class="btn btn-sm btn-success" onclick="showEditModal('@res.PrenotazioneId')">Edit</button>
                         <button class="btn btn-sm btn-danger" onclick="showDeleteModal('@res.PrenotazioneId')">Delete</button>
                     </td>
+                    }
                 </tr>
             }
         </tbody>

@@ -1,0 +1,43 @@
+﻿@model RegisterViewModel
+
+<form asp-controller="Account" asp-action="Register" method="post" class="p-4 rounded shadow-sm bg-light" style="max-width: 400px; margin: auto;">
+    <h3 class="text-center mb-4">Registrati</h3>
+
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" asp-for="FirstName" placeholder="Inserisci il tuo nome" required>
+        <span class="text-danger" asp-validation-for="FirstName"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cognome</label>
+        <input type="text" class="form-control" asp-for="LastName" placeholder="Inserisci il tuo cognome" required>
+        <span class="text-danger" asp-validation-for="LastName"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email" placeholder="Inserisci la tua email" required>
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Data di Nascita</label>
+        <input type="date" class="form-control" asp-for="BirthDate" required>
+        <span class="text-danger" asp-validation-for="BirthDate"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" asp-for="Password" placeholder="Inserisci la password" required>
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Conferma Password</label>
+        <input type="password" class="form-control" asp-for="ConfirmPassword" placeholder="Conferma la password" required>
+        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Registrati</button>
+</form>

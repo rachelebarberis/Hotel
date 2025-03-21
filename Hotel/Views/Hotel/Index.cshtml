@@ -3,9 +3,10 @@
 }
 
 <h1 class="text-center">Reservations List</h1>
-
-<button class=" btn btn-danger" onclick="showAddModal()">Add Reservation</button>
-
+@if (User.IsInRole("Admin"))
+{
+	<button class=" btn btn-danger" onclick="showAddModal()">Add Reservation</button>
+}
 <div class="container" id="tableContainer"></div>
 
 

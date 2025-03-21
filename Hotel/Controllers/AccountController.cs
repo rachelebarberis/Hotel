@@ -14,6 +14,7 @@ using Hotel.Data;
 
 namespace Hotel.Controllers
 {
+   
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -87,12 +88,12 @@ namespace Hotel.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Register()
         {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
@@ -116,8 +117,8 @@ namespace Hotel.Controllers
             var user = await _userManager.FindByEmailAsync(newUser.Email);
 
 
-            await _userManager.AddToRoleAsync(user, "Admin");
-            //var text =await _studentDbContext.ApplicationUsers.Include(a => a.ApplicationUserRole).ThenInclude(ap => ap.Role).ToListAsync();
+            await _userManager.AddToRoleAsync(user, "User");
+            
 
 
             return RedirectToAction("Index", "Home");
@@ -139,5 +140,5 @@ namespace Hotel.Controllers
     }
 }
     
- }
-}
+ 
+

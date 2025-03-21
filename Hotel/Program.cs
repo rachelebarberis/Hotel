@@ -53,7 +53,7 @@ builder.Services.AddAuthentication(
         options.AccessDeniedPath = "/Account/Login";
         options.Cookie.HttpOnly = true;
         options.ExpireTimeSpan = TimeSpan.FromHours(1);
-        options.Cookie.Name = "EcommerceLiveEfCore";
+        options.Cookie.Name = "Hotel";
     });
 
 builder.Services.AddScoped<HotelService>();
